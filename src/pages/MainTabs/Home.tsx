@@ -15,7 +15,7 @@ export default function Home() {
   console.log("data", data);
 
   return (
-    <Layout.Page>
+    <Layout.Page px="16px">
       <Text fontSize={22} fontWeight={700}>
         Box Office
       </Text>
