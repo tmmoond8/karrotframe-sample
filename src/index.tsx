@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import "@karrotframe/navigator/index.css";
 import "@karrotframe/tabs/index.css";
 import "./index.css";
+import "./reset.css";
 
 ReactDOM.render(
   <React.StrictMode>
