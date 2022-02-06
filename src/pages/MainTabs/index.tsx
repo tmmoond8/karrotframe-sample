@@ -10,6 +10,9 @@ import Search from "./Search";
 const Tab = styled.div`
   width: 100%;
   height: 100%;
+  & > svg {
+    margin: 0 auto;
+  }
 `;
 
 const tabs = [
@@ -60,7 +63,7 @@ const tabs = [
 ];
 
 export default function MainTabsPage() {
-  const [activeTabKey, setActiveTabKey] = React.useState("Tab_Home");
+  const [activeTabKey, setActiveTabKey] = React.useState("TAB_HOME");
   return (
     <BottomTabs
       activeTabKey={activeTabKey}

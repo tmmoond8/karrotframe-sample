@@ -1,15 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
 import "@karrotframe/navigator/index.css";
 import "@karrotframe/tabs/index.css";
 import "./index.css";
 import "./reset.css";
 
+const theme = extendTheme({
+  config: {
+    useSystemColorMode: false,
+    initialColorMode: "light",
+  },
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
