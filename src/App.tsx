@@ -1,4 +1,5 @@
 import React from "react";
+import MainTabs from "./pages/MainTabs";
 
 import {
   Navigator,
@@ -10,9 +11,7 @@ import {
 const App: React.FC = () => {
   return (
     <Navigator>
-      <Screen path="/" component={Home} />
-      <Screen path="/page1" component={Page1} />
-      <Screen path="/page2" component={Page2} />
+      <Screen path="/" component={MainTabs} />
     </Navigator>
   );
 };

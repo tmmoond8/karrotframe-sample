@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "@karrotframe/navigator/index.css";
+import "@karrotframe/tabs/index.css";
 import "./index.css";
 
 ReactDOM.render(
