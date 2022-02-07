@@ -12,12 +12,14 @@ import {
 } from "@chakra-ui/react";
 import useSWR from "swr";
 import { IoIosSearch } from "react-icons/io";
+import { useNavigator } from "@karrotframe/navigator";
 import Layout from "../../components/Layout";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function Search() {
   const [search, setSearch] = React.useState("");
+  const { push } = useNavigator();
   const { data, error } = useSWR<{
     films: {
       id: number;
@@ -27,7 +29,6 @@ export default function Search() {
       poster_url: string;
     }[];
   }>("/api/search.json", fetcher);
-  console.log("data", data);
 
   return (
     <Layout.Page>
@@ -53,7 +54,15 @@ export default function Search() {
       </Text>
       <VStack as="ol" mt="12px" overflowY="auto" flex="1" p="12px 16px">
         {data?.films.map(({ id, title, poster_url, year }) => (
-          <Flex key={id} as="li" w="100%">
+          <Flex
+            key={id}
+            as="li"
+            w="100%"
+            cursor="pointer"
+            onClick={() => {
+              push("/detail");
+            }}
+          >
             <Image src={poster_url} w="20vw" h="auto" borderRadius="2px" />
             <Text fontSize={14} p="4px 12px" display="flex" alignItems="center">
               {title}
