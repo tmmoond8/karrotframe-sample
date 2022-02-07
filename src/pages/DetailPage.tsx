@@ -93,7 +93,7 @@ interface Detail {
 }
 
 export default function DetailPage() {
-  const { data, error } = useSWR<Detail>("/api/getDetail.json", fetcher);
+  const { data } = useSWR<Detail>("/api/getDetail.json", fetcher);
 
   return (
     <>

@@ -14,6 +14,7 @@ const App: React.FC = () => {
     if (colorMode === "dark") {
       toggleColorMode();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

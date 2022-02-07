@@ -20,7 +20,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 export default function Search() {
   const [search, setSearch] = React.useState("");
   const { push } = useNavigator();
-  const { data, error } = useSWR<{
+  const { data } = useSWR<{
     films: {
       id: number;
       title: string;

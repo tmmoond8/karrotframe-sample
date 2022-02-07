@@ -7,7 +7,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function Home() {
   const { push } = useNavigator();
-  const { data, error } = useSWR<{
+  const { data } = useSWR<{
     collections: {
       id: number;
       name: string;
