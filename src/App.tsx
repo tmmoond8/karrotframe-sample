@@ -1,5 +1,6 @@
 import React from "react";
 import MainTabsPage from "./pages/MainTabsPage";
+import DetailPage from "./pages/DetailPage";
 import { useColorMode } from "@chakra-ui/react";
 
 import { Navigator, Screen } from "@karrotframe/navigator";
@@ -16,6 +17,7 @@ const App: React.FC = () => {
   return (
     <Navigator>
       <Screen path="/" component={MainTabsPage} />
+      <Screen path="/detail" component={DetailPage} />
     </Navigator>
   );
 };
