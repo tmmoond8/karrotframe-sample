@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import reportWebVitals from "./reportWebVitals";
 import "@karrotframe/navigator/index.css";
 import "@karrotframe/tabs/index.css";
+import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import "./reset.css";
+import { AppContextProvider } from "./AppContext";
 
 const theme = extendTheme({
   config: {
@@ -18,7 +19,9 @@ const theme = extendTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")

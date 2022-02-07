@@ -14,7 +14,6 @@ export default function Home() {
       poster_urls: string[];
     }[];
   }>("/api/getCollections.json", fetcher);
-  console.log("data", data);
 
   return (
     <Layout.Page px="16px">
